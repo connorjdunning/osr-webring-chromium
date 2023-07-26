@@ -1,14 +1,19 @@
+**Mr.Ygg, 
+You can have ownership over this repo whenever you wish (or I can scrap it if you'd rather).
+I'm willing to work on or maintain a Chromium port.**
 
 # The OSR Webring Plugin
 
-This is my attempt at recreating a webring, "... a collection of websites linked together in a circular structure, and usually organized around a specific theme, often educational or social." In this particular case the "specific theme" is around Old School Roleplaying games. Very educational!
+>This is my attempt at recreating a webring, "... a collection of websites linked together in a circular structure, and usually organized around a specific theme, often educational or social." In this particular case the "specific theme" is around Old School Roleplaying games. Very educational!
+
+*-Totality of Ygg*
 
 
 ## Installation
 
-You can install this at Firefox Browser Add-Ons  https://addons.mozilla.org/en-US/firefox/addon/the-osr-webring/ 
-
-The Add-On will open a Sidebar (View->Sidebar) where you can coast through various OSR sites and read whatever strikes your fancy.
+Currently, you can: 
+* Clone the repo and load as an unpacked extension
+* Download a [release](https://github.com/connorjdunning/osr-webring-chromium/releases) and drag the .crx file onto your **Manage Extension** page in Chrome/Brave/Edge
     
 ## Adding your Blog
 
@@ -21,6 +26,8 @@ Also, please message me if you don't want your stuff included, no questions aske
 
 
 ## Screenshots
-
-![App Screenshot](https://addons.mozilla.org/user-media/previews/full/284/284026.png?modified=1687314683)
+*As a Popup (click icon)*
+![App Screenshot](https://i.imgur.com/V0Fr6K1.jpg)
+*As a Sidebar*
+![App Screenshot](https://i.imgur.com/skCN7fk.jpg)
 
