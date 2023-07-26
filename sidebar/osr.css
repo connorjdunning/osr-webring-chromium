@@ -1,99 +1,99 @@
+/* Reset and basic styling */
 html, body {
-  height: 100%;
+  height: fit-content;
+  min-height: 400px;
   width: 100%;
+  min-width: 300px;
   margin: 0;
-  box-sizing: border-box;
+  overflow: hidden;
 }
 
 body {
-    height: 90%;
-    margin-top: 10%;
-    font: caption;
-    background-color: #2b2a33;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 90%;
+  margin: 10% 0 10% 0;
+  font: caption;
+  background-color: #2b2a33;
 }
 
-p {
-  margin: 1em 2em;
+/* Common styles for .current_ring and .infoblock */
+.current_ring, .infoblock {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-top: 2px solid white;
 }
 
-.w3-button {
-  border: none;
-  display: inline-block;
-  padding: 8px 16px;
-  vertical-align: middle;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-  background-color: inherit;
-  text-align: center;
-  cursor: pointer;
-  white-space: nowrap;
+.current_ring {
+  min-height: 24%;
+  background-color: #0060df;
 }
 
-.action-button {
-    margin: 5px;
-    height: 20px;
-    border: none;
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    white-space: nowrap;
-    border-radius: 4px;
-    background-color: #e0e0e6;
-    padding: 4px 16px;
-    color: black;
-    min-height: 5%;
+.infoblock {
+  flex-direction: column;
+  min-height: 15%;
+  background-color: #0060df;
+  color: #f0f0f4;
+  border-bottom: 2px solid white;
 }
 
+/* Individual element styles */
 
-.current_ring { 
-    border: 1px solid white;
-    min-height: 24%;
-    text-align: center;
-    vertical-align: middle;
-    color: white;
-    background-color: #0060df;
-}
-
-
-.infoblock { 
-    text-align: center;
-    border: 1px solid white;
-    min-height: 15%;
-    background-color: #0060df;
-    color: #f0f0f4;
-}
-
-#author{ font-style:italic; font-size: small; text-align:center;}
-#desc {text-align: center;}
-#systems {text-align: center; font-weight:bold;}
-#ts {text-align: center;
-color: white;
-font-style: italic;
+#random, #reload {
+  height: 2em;
+  width: 60%;
+  margin: 5px;
+  border-radius: 5px;
+  /* background-color: #52525e;
+  border: 2px solid #2b2a33; */
 }
 
 .centercol {
-  width: 50%;
-  padding-top: 25%;
-  display: inline-block;
+  width: 70%;
+  padding: 50px 10px;
+  align-items: center;
   text-align: center;
 }
 
-.leftcol { 
-    float: left;
-    width: 15%;
-    vertical-align: center;
-    padding: 25% 0 25% 0;
-    background-color: #52525e;
-}
-.rightcol { 
-    float: right;
-    width: 15%;
-    vertical-align: center;
-    padding: 25% 0 25% 0;
-    background-color: #52525e;
+#curr {
+  font-weight: bold;
 }
 
+#author {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+#prev, #next {
+  height: 100%;
+  width: 15%;
+  font-weight: 800;
+  background-color: #52525e;
+  border: none;
+}
+
+#systems {
+  font-weight: bold;
+}
+
+#desc {
+  padding: 0 25px;
+}
+
+/* Button hover */
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+/* Global link and paragraph styles */
+p,
+#prev,
+#next,
 a:link,
 a:visited,
 a:hover,

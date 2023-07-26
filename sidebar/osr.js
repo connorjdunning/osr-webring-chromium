@@ -5,7 +5,8 @@ function _tojson (obj) {
 // Clear the entire cache
 function _clear() {
     console.log( 'Cleared Webring cache' );
-    browser.storage.local.clear();
+    // browser.storage.local.clear();
+    chrome.storage.sync.clear();
 }
 
 
@@ -22,7 +23,7 @@ async function _init( sites ) {
         let ts = await json_ts.json();
         let current = "c85fda9e4c95d8f3326e84d23d998684";
 
-        browser.storage.local.set({ webring, hashes, current, ts });
+        chrome.storage.local.set({ webring, hashes, current, ts });
         console.log( 'Webring reloaded' );
         // overload
         sites = { webring, hashes, current, ts };
@@ -45,7 +46,7 @@ function _updateRing( current ) {
     curr = idx;
   }
 
-  browser.storage.local.set({ current });
+  chrome.storage.local.set({ current });
 
   // create the ring!
   if( curr == 0 ) {
@@ -95,6 +96,11 @@ function _handleError( error ) {
 
 // wrapper function for click events
 function _handleClick() {
+  if ( this.id == 'curr') {
+    console.log(this.href);
+    window.open(this.href, '_blank');
+  }
+
   if( this.id == 'prev' || this.id == 'next' ) {
     _updateRing( this.dataset.hash );
     return;
@@ -103,7 +109,7 @@ function _handleClick() {
   if( this.id == 'reload' ) {
     console.log( "Flushing storage and reloading the webring" );
     _clear();
-    let theWebring = browser.storage.local.get(["webring","hashes","current"]);
+    let theWebring = chrome.storage.local.get(["webring","hashes","current"]);
     theWebring
         .then( _init, _handleError )
         .then( _updateSidebar, _handleError );
@@ -118,7 +124,7 @@ function _handleClick() {
   return;
 }
 
-const extURI = browser.runtime.getURL("");
+const extURI = chrome.runtime.getURL("");
 const hashURI = "https://raw.githubusercontent.com/totalityofygg/osr-webring-firefox/main/hashes.json";
 const webrURI = "https://raw.githubusercontent.com/totalityofygg/osr-webring-firefox/main/webring.json";
 const timeURI = "https://raw.githubusercontent.com/totalityofygg/osr-webring-firefox/main/timestamp.json";
@@ -142,9 +148,11 @@ buttons.forEach(function(currentBtn){
   currentBtn.addEventListener('click', _handleClick )
 });
 
+// probably shouldn't have to add event listener to a link but...
+thisRing.addEventListener('click', _handleClick );
 
-browser.windows.getCurrent({populate: true}).then((windowInfo) => {
-    let theWebring = browser.storage.local.get(["webring","hashes","current","ts"]);
+chrome.windows.getCurrent({populate: true}).then((windowInfo) => {
+    let theWebring = chrome.storage.local.get(["webring","hashes","current","ts"]);
     theWebring
         .then( _init, _handleError )
         .then( _updateSidebar, _handleError );
