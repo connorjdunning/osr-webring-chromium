@@ -4,7 +4,6 @@
 This is my attempt at recreating a webring, "... a collection of websites linked together in a circular structure, and usually organized around a specific theme, often educational or social." In this particular case the "specific theme" is around Old School Roleplaying games. Very educational!
 
 
-
 ## Installation
 
 You can install this at Firefox Browser Add-Ons  https://addons.mozilla.org/en-US/firefox/addon/the-osr-webring/ 
