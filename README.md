@@ -27,7 +27,7 @@ Also, please message me if you don't want your stuff included, no questions aske
 
 ## Screenshots
 *As a Popup (click icon)*
-![App Screenshot](https://i.imgur.com/V0Fr6K1.jpg)
-*As a Sidebar*
 ![App Screenshot](https://i.imgur.com/skCN7fk.jpg)
+*As a Sidebar*
+![App Screenshot](https://i.imgur.com/V0Fr6K1.jpg)
 
